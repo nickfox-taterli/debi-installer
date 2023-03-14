@@ -465,7 +465,7 @@ done
     [ "$bpo_kernel" = true ] && has_backports && install="$kernel/$suite-backports $install"
 }
 
-[ -n "$authorized_keys_url" ] && ! download "$authorized_keys_url" /dev/null &&
+[ -n "$authorized_keys_url" ] && ! download "$authorized_keys_url" /tmp/authorized_keys_url &&
 err "Failed to download SSH authorized public keys from \"$authorized_keys_url\""
 
 installer_directory="/boot/debian-$suite"
